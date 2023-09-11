@@ -1,0 +1,31 @@
+ALGORITHM plad
+VAR
+    str:STRING
+BEGIN
+     Write("Enter a word: ");
+    Read(str);
+    
+    if (palindrome(str,0)) then
+        Write("The word", str , " is a palindrome.")
+    else
+        Write("The word", str , " is not a palindrome." );
+END
+
+
+FUNCTION palindrome(str:STRING,i:INTEGER) : BOOLEAN
+VAR
+    j : INTEGER ;
+BEGIN
+    IF (str.length <=1 ) THEN
+        RETURN false ;
+    END_IF
+    j = str.length -i - 1 ;
+    IF str[i]=str[j] THEN 
+    palindrome(str ,i+1)
+    END_IF
+    
+    ELSE_IF (i=j) THEN
+        RETURN true
+    END_IF
+     ELSE RETURN false
+    END
